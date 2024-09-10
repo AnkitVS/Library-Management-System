@@ -59,6 +59,6 @@
         <i class="fas fa-moon moon-icon"></i> <!-- Moon icon for dark mode -->
         <i class="fas fa-sun sun-icon"></i> <!-- Sun icon for light mode -->
     </button>
-    <script src="js/script.js"></script>
+    <script src="js/index_script.js"></script>
 </body>
 </html>
