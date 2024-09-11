@@ -34,7 +34,7 @@
                 </form>
             </div>
             
-            <!-- Signup Form -->
+            <!-- Signup Form 
             <div class="form-container signup-form" id="signupForm">
                 <h2>Sign Up</h2>
                 <form id="signupFormElement" action="<%= request.getContextPath() %>/signup" method="post">
@@ -52,7 +52,7 @@
                     <button type="submit">Sign Up</button>
                     <p>Already have an account? <a href="#" id="switchToLogin">Login</a></p>
                 </form>
-            </div>
+            </div> -->
         </div>
     </div>
     <button class="dark-mode-toggle" id="darkModeToggle">

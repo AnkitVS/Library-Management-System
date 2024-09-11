@@ -1,0 +1,248 @@
+/* Common Styles */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: var(--background-color);
+    transition: background-color 0.3s ease;
+    overflow: hidden;
+}
+
+.container {
+    width: 400px;
+    max-height: 90vh; /* Ensure container height fits within viewport */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: var(--container-background-color);
+    overflow: auto; /* Allow scrolling if content overflows */
+    position: relative;
+}
+
+.form-wrapper {
+    display: flex;
+    flex-direction: column; /* Adjust for single form */
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 20px; /* Padding to ensure content doesn't touch the edges */
+}
+
+.form-container {
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: var(--form-background-color);
+    color: var(--text-color);
+    width: 100%;
+}
+
+.register-form {
+    background-color: var(--register-form-background-color);
+}
+
+h2 {
+    margin: 0 0 20px;
+    font-size: 26px;
+    color: var(--heading-color);
+    text-align: center;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: var(--label-color);
+}
+
+.input-group input[type="text"],
+.input-group input[type="password"],
+.input-group input[type="email"],
+.input-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--input-border-color);
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.input-group input[type="checkbox"] {
+    margin-left: 10px;
+}
+
+.input-group input[type="password"] {
+    padding-right: 40px;
+}
+
+.input-group .fa-eye, /* Added */
+.input-group .fa-eye-slash { /* Added */
+    position: absolute; /* Added */
+    right: 10px; /* Added */
+    top: 60%; /* Added */
+    transform: translateY(-50%); /* Added */
+    cursor: pointer; /* Added */
+    color: var(--text-color); /* Added */
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--button-background-color);
+    color: var(--button-text-color);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--button-hover-background-color);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    overflow: auto; /* Allow scrolling if needed */
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    --background-color: #121212;
+    --container-background-color: #1e1e1e;
+    --form-background-color: #1e1e1e;
+    --text-color: #e0e0e0;
+    --heading-color: #e0e0e0;
+    --label-color: #b0b0b0;
+    --input-border-color: #333;
+    --button-background-color: #bb86fc;
+    --button-text-color: #ffffff;
+    --button-hover-background-color: #a15fcb;
+    --link-color: #bb86fc;
+}
+
+body.light-mode {
+    --background-color: #f0f2f5;
+    --container-background-color: #ffffff;
+    --form-background-color: #ffffff;
+    --text-color: #333;
+    --heading-color: #333;
+    --label-color: #555;
+    --input-border-color: #ddd;
+    --button-background-color: #007bff;
+    --button-text-color: #ffffff;
+    --button-hover-background-color: #0056b3;
+    --link-color: #007bff;
+}
+
+/* Dark mode specific stars effect */
+body.dark-mode::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: url('https://www.transparenttextures.com/patterns/stardust.png'); /* Star texture */
+    background-size: cover;
+    z-index: -1;
+}
+
+/* Light mode specific stars effect */
+body.light-mode::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+}
+
+.dark-mode-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    width: 50px; /* Increased size for better visibility */
+    height: 50px; /* Increased size for better visibility */
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.6s ease, color 0.6s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dark-mode-toggle .moon-icon,
+.dark-mode-toggle .sun-icon {
+    position: absolute;
+    font-size: 20px; /* Adjust size to fit inside the button */
+}
+
+.dark-mode-toggle .moon-icon {
+    color: #f1c40f; /* Gold color for moon */
+}
+
+.dark-mode-toggle .sun-icon {
+    color: #f39c12; /* Orange color for sun */
+}
+
+.dark-mode-toggle .moon-icon {
+    display: block; /* Show moon icon by default */
+}
+
+.dark-mode-toggle .sun-icon {
+    display: none; /* Hide sun icon by default */
+}
+
+body.dark-mode .moon-icon {
+    display: none; /* Hide moon icon in dark mode */
+}
+
+body.dark-mode .sun-icon {
+    display: block; /* Show sun icon in dark mode */
+}
+
+/* Eye icon styles */
+.password-group {
+    position: relative;
+}
+
+.password-group input[type="password"] {
+    padding-right: 40px; /* Space for the eye icon */
+}
+
+.password-group .fa-eye {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+.password-group .fa-eye-slash {
+    color: var(--text-color);
+}
+
+/* Existing styles here */
+
+.hidden {
+    display: none;
+}
+
+/* Show userId input when visible */
+.visible {
+    display: block;
+}
