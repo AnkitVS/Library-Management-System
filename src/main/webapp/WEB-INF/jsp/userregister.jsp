@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
-    <link rel="stylesheet" href="static/registerStyle.css">
+    <link rel="stylesheet" href="/css/registerstyle.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
@@ -54,6 +54,6 @@
         <i class="fas fa-moon moon-icon"></i> <!-- Moon icon for dark mode -->
         <i class="fas fa-sun sun-icon"></i> <!-- Sun icon for light mode -->
     </button>
-    <script src="js/registerScript.js"></script>
+    <script src="/js/userregisterscript.js"></script>
 </body>
 </html>

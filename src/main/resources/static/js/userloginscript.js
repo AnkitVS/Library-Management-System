@@ -5,17 +5,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const formWrapper = document.getElementById('formWrapper');
     const switchToSignup = document.getElementById('switchToSignup');
     const switchToLogin = document.getElementById('switchToLogin');
-    const darkModeToggle = document.getElementById('darkModeToggle');
-
-    // Initialize dark mode based on localStorage
-    const isDarkMode = localStorage.getItem('dark-mode') === 'true';
-    if (isDarkMode) {
-        document.body.classList.add('dark-mode');
-        document.body.classList.remove('light-mode');
-    } else {
-        document.body.classList.add('light-mode');
-        document.body.classList.remove('dark-mode');
-    }
 
     // Toggle password visibility for login
     loginShowPassword.addEventListener('click', function() {
