@@ -12,10 +12,9 @@ public class UserEntity {
     private String userid;
     private String password;
     private String userName;
-    private String email;
     private String firstName;
     private String lastName;
-    private String role;
+    private String email;
 
     public String getUserid() {
         return userid;
@@ -41,14 +40,6 @@ public class UserEntity {
         this.userName = userName;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
     public String getFirstName() {
         return firstName;
     }
@@ -65,6 +56,14 @@ public class UserEntity {
         this.lastName = lastName;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     public String getRole() {
         return role;
     }
@@ -72,4 +71,7 @@ public class UserEntity {
     public void setRole(String role) {
         this.role = role;
     }
+
+    private String role;
+
 }

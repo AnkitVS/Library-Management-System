@@ -1,7 +1,7 @@
 package org.anve.LibraryManagementSystem.Service;
 
-import org.anve.LibraryManagementSystem.DAO.UserDAO;
 import org.anve.LibraryManagementSystem.Entity.UserEntity;
+import org.anve.LibraryManagementSystem.Repository.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,31 +11,26 @@ import java.util.List;
 public class UserService {
 
     @Autowired
-    private UserDAO userDAO;
+    UserRepo repo;
 
     public List<UserEntity> getAllUsers() {
-        return userDAO.getAllUsers();
+        return repo.findAll();
     }
+
     public UserEntity getUser(String id) {
-        return userDAO.getUser(id);
+        return repo.findById(id).get();
     }
-    public String addUser(UserEntity user) {
-        if (userDAO.updateUser(user)==null)
-            return "Added Successfully";
-        else
-            return "Not Added";
+
+    public void updateUser(UserEntity user) {
+        repo.save(user);
     }
-    public String updateUser(UserEntity user) {
-        if (userDAO.updateUser(user)==null)
-            return "Updated Successfully";
-        else
-            return "Not Updated";
+
+    public void deleteUser(String id) {
+        repo.deleteById(id);
     }
-    public String deleteUser(String id) {
-        if (userDAO.deleteUser(id)==null)
-            return "Deleted Successfully";
-        else
-            return "Not Deleted";
+
+    public void addUser(UserEntity user) {
+        repo.save(user);
     }
 
 }
