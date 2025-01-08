@@ -33,4 +33,9 @@ public class UserService {
         repo.save(user);
     }
 
+    /*Additional Functions*/
+    public String loginUser(String userId,String password) {
+        return ((repo.findByUseridAndPassword(userId,password)!=null)?"User Present":"User Not Present");
+    }
+
 }

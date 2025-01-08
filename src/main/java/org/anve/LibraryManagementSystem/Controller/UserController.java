@@ -20,11 +20,13 @@ public class UserController {
     public List<UserEntity> getAllUsers(){
         return userService.getAllUsers();
     }
+
     @GetMapping("/user/{id}")
     @ResponseBody
     public UserEntity get(@PathVariable String id){
        return userService.getUser(id);
     }
+
     @PutMapping("/user")
     @ResponseBody
     public void update(@RequestBody UserEntity user){
@@ -37,10 +39,15 @@ public class UserController {
         userService.deleteUser(id);
     }
 
-    @PostMapping("/user/")
+    @PostMapping({"/user/","/register"})
     @ResponseBody
     public void add(@RequestBody UserEntity user){
         userService.addUser(user);
+    }
+
+    @PostMapping("/login")
+    public String userLogin(@RequestParam("userId") String username, @RequestParam("password") String password) {
+        return userService.loginUser(username,password);
     }
 
 }

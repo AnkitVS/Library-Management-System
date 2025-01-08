@@ -11,7 +11,6 @@ public class UserEntity {
     @Id
     private String userid;
     private String password;
-    private String userName;
     private String firstName;
     private String lastName;
     private String email;
@@ -30,14 +29,6 @@ public class UserEntity {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
     }
 
     public String getFirstName() {

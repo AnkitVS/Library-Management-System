@@ -14,7 +14,7 @@
             <!-- Login Form -->
             <div class="form-container login-form" id="loginForm">
                 <h2>Login</h2>
-                <form id="loginFormElement" action="<%= request.getContextPath() %>/login" method="post">
+                <form id="loginFormElement" action="/login" method="post">
                     <div class="input-group">
                         <label for="loginUserId">User ID:</label>
                         <input type="text" id="loginUserId" name="userId" pattern="[A-Za-z0-9]{4,12}" title="User ID must be between 4 and 12 alphanumeric characters" required>
@@ -31,7 +31,7 @@
                 </form>
             </div>
             
-            <!-- Signup Form 
+            <!-- Signup Form
             <div class="form-container signup-form" id="signupForm">
                 <h2>Sign Up</h2>
                 <form id="signupFormElement" action="<%= request.getContextPath() %>/signup" method="post">
